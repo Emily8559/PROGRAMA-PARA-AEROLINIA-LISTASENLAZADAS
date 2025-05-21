@@ -55,9 +55,7 @@ class Pasajero(Persona):
             return self.__costo_tiquete * 0.93
         return self.__costo_tiquete  
     
-    ''' def costo_total(self):
-        
-        return self.pasajero_infante() + self.calcular_costo_cargaEspecial() + self.calcular_equipajeExtra()'''
+    
     
     def registro_carga(self, biciclata, gato, perro, peso):
         self.__equipaje = peso
@@ -110,7 +108,7 @@ class Vuelo:
         self.ciudad_destino = c_destino
         self.fecha = fecha
         self.hora = hora
-        self.cabeza = None #aqui
+        self.cabeza = None 
         self.tiquetes_recaudados = 0
         self.equipaje_recaudado = 0
 
@@ -121,7 +119,7 @@ class Vuelo:
             self.cabeza = nuevo_nodo
         else:
             actual = self.cabeza
-            while actual.siguiente:                  #aqui
+            while actual.siguiente:                  
                 actual = actual.siguiente
             actual.siguiente = nuevo_nodo
         
@@ -141,7 +139,7 @@ class Vuelo:
         
         while actual:
             if actual.pasajero.get_nombre() == nombre:
-                # Restar los valores del pasajero que se eliminará
+               
                 self.tiquetes_recaudados -= actual.pasajero.pasajero_infante()
                 self.equipaje_recaudado -= (actual.pasajero.calcular_equipajeExtra() + 
                                            actual.pasajero.calcular_costo_cargaEspecial())
@@ -153,7 +151,7 @@ class Vuelo:
                 return True
             anterior = actual
             actual = actual.siguiente
-        return False                     #hasta aqui
+        return False                    
         
         
     def vender_tquete(self, pasajero):
