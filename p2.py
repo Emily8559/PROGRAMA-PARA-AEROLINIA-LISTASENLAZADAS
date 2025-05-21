@@ -1,7 +1,7 @@
 class NodoPasajero:
     def __init__(self, pasajero):
         self.pasajero = pasajero
-        self.siguiente = None  #aqui
+        self.siguiente = None  
 
 
 
